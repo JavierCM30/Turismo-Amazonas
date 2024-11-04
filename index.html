@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Flora y Fauna Silvestre</title>
+    <link rel="stylesheet" href="resources/css/style.css">
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+<body>
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <i data-feather="leaf"></i>
+                <span>Bienvenidos A Amazonas</span>
+            </div>
+            <div class="region">
+                <i data-feather="map-pin"></i>
+                <span id="region-name">Bagua</span>
+            </div>
+            <nav class="main-nav">
+                <ul>
+                    <li><a href="#"><i data-feather="home"></i>  Inicio</a></li>
+                    <li><a href="#"><i data-feather="loader"></i>  Flora</a></li>
+                    <li><a href="#"><i data-feather="feather"></i>  Fauna</a></li>
+                </ul>
+            </nav>
+            <button id="menu-toggle" aria-label="Abrir menú">
+                <i data-feather="menu"></i>
+            </button>
+        </div>
+    </header>
+
+    <div id="mobile-menu" class="mobile-menu">
+        <ul>
+            <li><a href="#"><i data-feather="home"></i> Inicio</a></li>
+            <li><a href="#"><i data-feather="loader"></i> Flora</a></li>
+            <li><a href="#"><i data-feather="feather"></i> Fauna</a></li>
+        </ul>
+    </div>
+
+    <main>
+        <h1>Bienvenido a EcoExplorer</h1>
+        <p>Descubre la maravillosa flora y fauna de nuestra región.</p>
+
+        <div class="carousel-container">
+            <div class="carousel">
+                <div class="carousel-slide">
+                    <img src="resources/img/kuelap_upscayl_2x_realesrgan-x4plus.png" alt="Jaguar en la selva">
+                    <div class="slide-content">
+                        <h2>Fortaleza De Kuelap</h2>
+                        <p>Una fortaleza prehistorica construida en tiempos de la Cultura Chachapoyana, permitiendo presenciar hoy en dia el alcance de sus conocimiento sobre la arquitectura de su epoca</p>
+                        <div class="location">
+                            <i data-feather="map-pin"></i>
+                            <span>Luya, Luya, Amazonas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="resources/img/orquidea_upscayl_2x_realesrgan-x4plus.png" alt="Orquídea rara">
+                    <div class="slide-content">
+                        <h2>Orquídea</h2>
+                        <p>Su apariencia única, caracterizada por pétalos simétricos y formas sofisticadas, las convierte en una de las plantas más apreciadas en jardines y decoraciones.</p>
+                        <div class="location">
+                            <i data-feather="map-pin"></i>
+                            <span>Pomacochas, Bongara, Amazonas</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel-slide">
+                    <img src="resources/img/oso_upscayl_2x_realesrgan-x4plus.png" alt="Cóndor andino">
+                    <div class="slide-content">
+                        <h2>Oso Hormigueo</h2>
+                        <p>El oso hormiguero es un mamífero único que se destaca por su largo hocico y lengua, adaptados especialmente para capturar hormigas y termitas.</p>
+                        <div class="location">
+                            <i data-feather="map-pin"></i>
+                            <span>Rodriguez De Mendoza, Rodriguez De Mendoza, Amazonas</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="carousel-buttons">
+                <button class="carousel-button prev">
+                    <i data-feather="chevron-left"></i>
+                </button>
+                <button class="carousel-button next">
+                    <i data-feather="chevron-right"></i>
+                </button>
+            </div>
+
+            <div class="carousel-dots"></div>
+        </div>
+    </main>
+
+    <script src="resources/js/main.js"></script>
+</body>
+</html>
