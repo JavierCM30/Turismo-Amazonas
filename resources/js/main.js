@@ -149,3 +149,126 @@ carousel.addEventListener('touchend', () => {
         prevSlide();
     }
 });
+
+
+// ... (previous JavaScript code for carousel remains unchanged) ...
+
+// Sample data for destinations
+const destinations = [
+    {
+        name: "Fortaleza de Kuélap",
+        image: "resources/img/kuelap_upscayl_2x_realesrgan-x4plus.png",
+        description: "Una fortaleza prehistórica construida en tiempos de la Cultura Chachapoyana.",
+        location: "Luya, Luya, Amazonas",
+        province: "Luya",
+        type: "Arqueológico"
+    },
+    {
+        name: "Catarata de Gocta",
+        image: "resources/img/gocta.png",
+        description: "Una de las cataratas más altas del mundo, con una caída de 771 metros.",
+        location: "Cocachimba, Bongará, Amazonas",
+        province: "Bongara",
+        type: "Natural"
+    },
+    {
+        name: "Cavernas de Quiocta",
+        image: "resources/img/quiocta.png",
+        description: "Un sistema de cuevas con formaciones geológicas impresionantes y pinturas rupestres.",
+        location: "Lamud, Luya, Amazonas",
+        province: "Luya",
+        type: "Natural"
+    },
+    {
+        name: "Sarcófagos de Karajía",
+        image: "resources/img/karajia.png",
+        description: "Antiguos sarcófagos de la cultura Chachapoyas ubicados en acantilados.",
+        location: "Luya, Luya, Amazonas",
+        province: "Luya",
+        type: "Arqueológico"
+    },
+    {
+        name: "Laguna de los Cóndores",
+        image: "resources/img/condores.png",
+        description: "Un sitio arqueológico y natural con momias y artefactos de la cultura Chachapoyas.",
+        location: "Leymebamba, Chachapoyas, Amazonas",
+        province: "Chachapoyas",
+        type: "Natural"
+    }
+];
+
+// Function to create a destination card
+function createDestinationCard(destination) {
+    const card = document.createElement('div');
+    card.className = 'destino-card';
+    card.innerHTML = `
+        <img src="${destination.image}" alt="${destination.name}">
+        <div class="destino-card-content">
+            <h3>${destination.name}</h3>
+            <p>${destination.description}</p>
+            <div class="location">
+                <i data-feather="map-pin"></i>
+                <span>${destination.location}</span>
+            </div>
+        </div>
+    `;
+    return card;
+}
+
+// Function to render destination cards
+function renderDestinations(destinationsToRender) {
+    const destinosGrid = document.getElementById('destinos-grid');
+    destinosGrid.innerHTML = '';
+    destinationsToRender.forEach(destination => {
+        const card = createDestinationCard(destination);
+        destinosGrid.appendChild(card);
+    });
+    feather.replace();
+}
+
+// Function to filter destinations
+function filterDestinations(name, province, type) {
+    return destinations.filter(destination => {
+        return (
+            destination.name.toLowerCase().includes(name.toLowerCase()) &&
+            (province === '' || destination.province === province) &&
+            (type === '' || destination.type === type)
+        );
+    });
+}
+
+// Debounce function to limit the rate of function calls
+function debounce(func, delay) {
+    let timeoutId;
+    return (...args) => {
+        clearTimeout(timeoutId);
+        timeoutId = setTimeout(() => func(...args), delay);
+    };
+}
+
+// Function to perform search
+const performSearch = debounce(() => {
+    const name = document.getElementById('search-name').value;
+    const province = document.getElementById('search-province').value;
+    const type = document.getElementById('search-type').value;
+    const filteredDestinations = filterDestinations(name, province, type);
+    renderDestinations(filteredDestinations);
+}, 300); // 300ms delay
+
+// Add event listeners for real-time search
+document.getElementById('search-name').addEventListener('input', performSearch);
+document.getElementById('search-province').addEventListener('change', performSearch);
+document.getElementById('search-type').addEventListener('change', performSearch);
+
+// Remove form submit event listener as it's no longer needed
+document.getElementById('search-form').removeEventListener('submit', performSearch);
+
+// Prevent form submission
+document.getElementById('search-form').addEventListener('submit', (e) => {
+    e.preventDefault();
+});
+
+// Initial render of all destinations
+renderDestinations(destinations);
+
+// ... (previous JavaScript code remains unchanged) ...

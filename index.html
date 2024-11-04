@@ -41,7 +41,7 @@
 
     <main>
         
-        <p>Descubre los  maravillosos sitios arqueologicos y megadiversidad  en floras y faunas de nuestra región.</p>
+        <p>Descubre los  maravillosos sitios arqueologicos y megadiversidad  en flora y fauna de nuestra región.</p>
 
         <div class="carousel-container">
             <div class="carousel">
@@ -91,6 +91,43 @@
 
             <div class="carousel-dots"></div>
         </div>
+        <section id="destinos" class="destinos-section">
+            <h2>Destinos Turísticos</h2>
+            <div class="search-container">
+                <form id="search-form" class="search-form">
+                    <div class="form-group">
+                        <label for="search-name">Nombre:</label>
+                        <input type="text" id="search-name" name="name" placeholder="Buscar por nombre">
+                    </div>
+                    <div class="form-group">
+                        <label for="search-province">Provincia:</label>
+                        <select id="search-province" name="province">
+                            <option value="">Todas las provincias</option>
+                            <option value="Bagua">Bagua</option>
+                            <option value="Bongara">Bongara</option>
+                            <option value="Chachapoyas">Chachapoyas</option>
+                            <option value="Luya">Luya</option>
+                            <option value="Rodriguez De Mendoza">Rodriguez De Mendoza</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="search-type">Tipo:</label>
+                        <select id="search-type" name="type">
+                            <option value="">Todos los tipos</option>
+                            <option value="Arqueológico">Arqueológico</option>
+                            <option value="Natural">Natural</option>
+                            <option value="Cultural">Cultural</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="search-button">
+                        <i data-feather="search"></i> Buscar
+                    </button>
+                </form>
+            </div>
+            <div id="destinos-grid" class="destinos-grid">
+                <!-- Destination cards will be dynamically inserted here -->
+            </div>
+        </section>
     </main>
 
     <script src="resources/js/main.js"></script>
