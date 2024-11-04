@@ -272,3 +272,63 @@ document.getElementById('search-form').addEventListener('submit', (e) => {
 renderDestinations(destinations);
 
 // ... (previous JavaScript code remains unchanged) ...
+
+// Existing JavaScript code remains unchanged
+
+// Function to handle the floating vision tag and modal
+function handleVisionTag() {
+    const visionTag = document.getElementById('visionTag');
+    const visionModal = document.getElementById('visionModal');
+    const closeModal = document.getElementById('closeModal');
+
+    visionTag.addEventListener('click', () => {
+        visionModal.style.display = 'flex';
+    });
+
+    closeModal.addEventListener('click', () => {
+        visionModal.style.display = 'none';
+    });
+
+    window.addEventListener('click', (event) => {
+        if (event.target === visionModal) {
+            visionModal.style.display = 'none';
+        }
+    });
+}
+
+// Function to handle the mobile menu toggle
+function handleMobileMenu() {
+    const menuToggle = document.getElementById('menu-toggle');
+    const mobileMenu = document.getElementById('mobile-menu');
+
+    menuToggle.addEventListener('click', () => {
+        mobileMenu.classList.toggle('active');
+    });
+}
+
+// Function to handle the carousel
+function handleCarousel() {
+    // Existing carousel code
+}
+
+// Function to handle the search form
+function handleSearch() {
+    // Existing search form code
+}
+
+// Function to initialize Feather icons
+function initFeatherIcons() {
+    feather.replace();
+}
+
+// Main initialization function
+function init() {
+    handleMobileMenu();
+    handleCarousel();
+    handleSearch();
+    initFeatherIcons();
+    handleVisionTag();
+}
+
+// Run the initialization function when the DOM is fully loaded
+document.addEventListener('DOMContentLoaded', init);
