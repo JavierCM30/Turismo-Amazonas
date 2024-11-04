@@ -240,10 +240,11 @@ main p {
 @media (max-width: 768px) {
     .region i span {
         display: block;
+        font-size: 0.5rem;
     }
 
     h1 {
-        font-size: 2rem;
+        font-size: 1rem;
     }
 
     main {
@@ -257,7 +258,8 @@ main p {
 
 @media (max-width: 480px) {
     .logo span {
-        display: none;
+        display: block;
+        font-size: 0.5rem;
     }
 
     h1 {
