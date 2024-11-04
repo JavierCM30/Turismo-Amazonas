@@ -238,8 +238,8 @@ main p {
 }
 
 @media (max-width: 768px) {
-    .region {
-        display: none;
+    .region i span {
+        display: block;
     }
 
     h1 {
